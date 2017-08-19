@@ -12,5 +12,9 @@ class RPSWeb < Sinatra::Base
     erb(:ready)
   end
 
+  get '/result' do
+    "Hello"
+  end
+  
   run! if app_file == $PROGRAM_NAME
 end
