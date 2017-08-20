@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/computer.rb'
+require './lib/game.rb'
 
 class RPSWeb < Sinatra::Base
 
@@ -13,8 +15,9 @@ class RPSWeb < Sinatra::Base
   end
 
   get '/result' do
-    "Hello"
+    @winner
+    erb(:result)
   end
-  
+
   run! if app_file == $PROGRAM_NAME
 end

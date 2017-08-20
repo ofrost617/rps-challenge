@@ -1,4 +1,4 @@
-require_relative '../rps_web.rb'
+require_relative '../../rps_web.rb'
 
 feature RPSWeb do
 
@@ -35,5 +35,12 @@ feature RPSWeb do
     expect(page).to have_button("Scissors")
   end
   
-  
+  scenario 'choosing r p or s takes the player to the result page' do
+    visit('/')
+    fill_in('player', :with => 'Olivia')
+    click_button('Submit')
+    click_button('Rock')
+    expect(page).to have_content("The winner is")
+  end
+
 end
